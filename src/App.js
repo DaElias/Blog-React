@@ -5,22 +5,23 @@ import Header from './Components/Header'
 import Inicio from './Components/Inicio';
 import Blog from './Components/Blog';
 import Acerca_de from './Components/Acerca_de';
+import Post from './Components/Post';
+
 
 function App() {
   return (
     <BrowserRouter>
       <ContenedorPrincipal>
-        <Header/>
+        <Header />
         <Main>
           <Route path="/" exact={true}>
             <Inicio />
           </Route>
-          <Route path="/blog">
-            <Blog />
-          </Route>
-          <Route path="/acerca_de">
-            <Acerca_de />
-          </Route>
+
+          <Route path="/blog" component={Blog} />
+          <Route path="/post/:id" component={Post} />
+          <Route path="/acerca_de" component={Acerca_de} />
+
         </Main>
       </ContenedorPrincipal>
     </BrowserRouter >
